@@ -6,9 +6,19 @@
     <description>Recent content in Categories on SwampWire Creations</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sun, 10 May 2020 13:20:52 -0400</lastBuildDate>
     
 	<atom:link href="https://www.swampwirecreations.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tutorials</title>
+      <link>https://www.swampwirecreations.com/categories/tutorials/</link>
+      <pubDate>Sun, 10 May 2020 13:20:52 -0400</pubDate>
+      
+      <guid>https://www.swampwirecreations.com/categories/tutorials/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

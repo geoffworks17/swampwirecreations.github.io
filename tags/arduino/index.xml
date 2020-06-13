@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on SwampWire Creations</title>
-    <link>https://www.swampwirecreations.com/posts/</link>
-    <description>Recent content in Posts on SwampWire Creations</description>
+    <title>Arduino on SwampWire Creations</title>
+    <link>https://www.swampwirecreations.com/tags/arduino/</link>
+    <description>Recent content in Arduino on SwampWire Creations</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 11 Jun 2020 07:33:59 -0400</lastBuildDate>
     
-	<atom:link href="https://www.swampwirecreations.com/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.swampwirecreations.com/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,16 +19,6 @@
       <guid>https://www.swampwirecreations.com/posts/revisiting-an-old-project/</guid>
       <description>The Original Blog Back in 2016, I was in my last year of grad school and starting my job hunt. In addition to the countless resume iterations, endless job application websites, and a constant stream of coffee, I wanted to create something that would showcase some of my work. This is what kicked off my first blog, which I hoped to serve as a somewhat professional portfolio.
 I am pretty sure the blog helped me get a few interviews, but once I accepted a job offer, I did not put much effort into new posts.</description>
-    </item>
-    
-    <item>
-      <title>Two Part Mold Making</title>
-      <link>https://www.swampwirecreations.com/posts/two-part-mold-making/</link>
-      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.swampwirecreations.com/posts/two-part-mold-making/</guid>
-      <description>Today, we&amp;rsquo;re going to take a 3d printed tabletop miniature and replicate it with a two part mold. This will speed of production of a part that would normally take two to three hours, and give us the freedom of different materials and colors.
-Two part molds allow us to cast more complex shapes than a one part, or open-face, mold. This open face creates a flat surface on the piece we are making.</description>
     </item>
     
   </channel>

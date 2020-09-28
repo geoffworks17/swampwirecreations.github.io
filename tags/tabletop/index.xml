@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tabletop on SwampWire Creations</title>
+    <title>tabletop on SwampWire Creations</title>
     <link>https://www.swampwirecreations.com/tags/tabletop/</link>
-    <description>Recent content in Tabletop on SwampWire Creations</description>
+    <description>Recent content in tabletop on SwampWire Creations</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 May 2020 17:08:35 -0400</lastBuildDate>
-    
-	<atom:link href="https://www.swampwirecreations.com/tags/tabletop/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sun, 27 Sep 2020 15:18:49 -0400</lastBuildDate><atom:link href="https://www.swampwirecreations.com/tags/tabletop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sate Display Piece</title>
+      <link>https://www.swampwirecreations.com/blog/sate-display-piece/</link>
+      <pubDate>Sun, 27 Sep 2020 15:18:49 -0400</pubDate>
+      
+      <guid>https://www.swampwirecreations.com/blog/sate-display-piece/</guid>
+      <description>Slow Death Games is an indie game company that sells the Starbreach dice and rulebook, along with some awesome punk / youth subculture minis for their game &amp;ldquo;Wild in the Streets&amp;rdquo;. A few months ago on Instagram, they announced they were throwing some free stickers into new orders. I figured it was time to pull the trigger and order some minis. Yes, free stickers are what got me. In particular, the &amp;ldquo;Love Miniatures, Hate Fascism&amp;rdquo; piece.</description>
+    </item>
     
     <item>
       <title>Week in Review 002</title>
@@ -33,10 +38,10 @@ Magnets, Painting with Vallejo, and Basing To make my growing Battletech collect
     
     <item>
       <title>Two Part Mold Making</title>
-      <link>https://www.swampwirecreations.com/posts/two-part-mold-making/</link>
+      <link>https://www.swampwirecreations.com/blog/two-part-mold-making/</link>
       <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.swampwirecreations.com/posts/two-part-mold-making/</guid>
+      <guid>https://www.swampwirecreations.com/blog/two-part-mold-making/</guid>
       <description>Today, we&amp;rsquo;re going to take a 3d printed tabletop miniature and replicate it with a two part mold. This will speed of production of a part that would normally take two to three hours, and give us the freedom of different materials and colors.
 Two part molds allow us to cast more complex shapes than a one part, or open-face, mold. This open face creates a flat surface on the piece we are making.</description>
     </item>

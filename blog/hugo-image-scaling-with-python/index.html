@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Image Scaling With Python - SwampWire Creations</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="SwampWire Creations" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">SwampWire Creations</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Image Scaling With Python</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-09-29T00:55:33-04:00">Tuesday, Sep 29, 2020</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/blog/" rel="category">Blog</a>
+	</span>
+</div></div>
+		</header><div class="content post__content clearfix">
+			<p>This blog is built using Hugo, a static website generator designed for quick build times and easy deployment. A static website requires no server backend, since everything is delivered in a <em>static</em> state to the reader (that&rsquo;s you!). All code is executed on the client machine. I love the lightweight simplicity of a static website, which brings up some nostalgia for the internet of the mid to late 90s, when these types of pages were the norm.</p>
+<p>As I work on this blog, I find myself doing a lot of background tasks over and over again. The most time consuming is editing pictures. This page outlines the challenges and benefits of using low resolution images in this blog, along with a script I have written to streamline the editing process.</p>
+<h2 id="saving-space">Saving Space</h2>
+<p><img src="/img/20/09-hugo-image-scaling/FullWithInset.jpg#center" alt="Sate">
+The image above might be the largest file on this site, a whopping 1.94 MB. Compared with most of the pictures I take with my camera or phone, this is one of the smaller ones. The average image size from my devices is about 4-5 MB. If I were to use these full resolution images, a single webpage could balloon up to nearly 50 MB. I pity the poor soul that tries to load up a 50 MB page on mobile data.</p>
+<p>To save on space, each jpeg is scaled down so that the largest dimension is 1000px, and the quality is lowered from 95 to 75. This result is a huge reduction in file size. The scaled image is displayed below:
+<img src="/img/20/09-hugo-image-scaling/Scaled.jpg#center" alt="Scaled">
+The scaled and reduced quality image takes up 46 KB. This is roughly 2.5% the original filesize, and much more reasonable to serve on a static page.</p>
+<p>Here is a 400% zoom of the original image with an overlay of the edited version. Can you see where the image quality suffers?
+<img src="/img/20/09-hugo-image-scaling/InsetZoom.jpg#center" alt="Inset">
+Looking closely, one might see a faint separation line running horizontal though the bottom of the diagonal strap buckle. Everything above is the original image, and everything below has been scaled down and compressed. There are a few artifacts in the empty spaces between the arms, but I cannot tell the difference when zoomed at 100%. Since the image still conveys the necessary information to support the page content, this is a great trade-off.</p>
+<p>Scaling, adjusting quality, and renaming the files takes a good bit of time when I am putting together a page for the site. It is tedious, monotonous work that is ripe for automation.</p>
+<h2 id="automate-the-boring-stuff">Automate the Boring Stuff</h2>
+<p>Whenever I am faced with the challenge of writing some script to speed things up, I always consider this post from <a href="http://www.xkcd.com/">xkcd</a>:
+<img src="https://imgs.xkcd.com/comics/automation.png#center" alt="Automation">
+It is easy to fall into the efficiency trap and lose sight of the original task. Fortunately, I only got bogged down in debugging for a few hours over the weekend. Since this script will help me get more posts written and live, it was a worthy investment of time.</p>
+<p>There is a lot of community support for python&rsquo;s Pillow image processing library, so I based my script around its functions.</p>
+<h3 id="get-current-folder-name-and-generate-file-prefix">Get current folder name and generate file prefix</h3>
+<p>Before I start a new post, I collect relevant pictures into folders to help organize my thoughts. These folders are named with the month number, and a few words to describe the overall project or subject (&ldquo;05 Generic Project Name&rdquo;). The following snippet collects the all the files within a folder, and uses the folder name to generate a somewhat unique prefix for the images (05gpn). It also builds a list of suffixes so I can easily number the images.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
+<span style="color:#f92672">import</span> os
+
+cwd <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getcwd()
+folder <span style="color:#f92672">=</span> cwd<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+folder <span style="color:#f92672">=</span> folder<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34; &#34;</span>)
+prefix <span style="color:#f92672">=</span> folder[<span style="color:#ae81ff">0</span>]
+<span style="color:#66d9ef">for</span> each <span style="color:#f92672">in</span> folder:
+    <span style="color:#66d9ef">if</span> each <span style="color:#f92672">!=</span> prefix:
+        prefix <span style="color:#f92672">+=</span> each[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>lower()
+
+suffix <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;01&#34;</span>, <span style="color:#e6db74">&#34;02&#34;</span>, <span style="color:#e6db74">&#34;03&#34;</span>, <span style="color:#e6db74">&#34;04&#34;</span>, <span style="color:#e6db74">&#34;05&#34;</span>, <span style="color:#e6db74">&#34;06&#34;</span>, <span style="color:#e6db74">&#34;07&#34;</span>, <span style="color:#e6db74">&#34;08&#34;</span>, <span style="color:#e6db74">&#34;09&#34;</span>]
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">100</span>):
+    suffix<span style="color:#f92672">.</span>append(str(i))</code></pre></div>
+<p>For the last part, I could have written a clever bit of code to append &ldquo;0&rdquo; to digits 1..9, but this brings me back to the comic above. I did not want to fall into the &ldquo;Rethinking&rdquo; and &ldquo;Ongoing Development&rdquo; part of the graph&hellip;</p>
+<h3 id="parse-file-list-and-apply-scale-and-quality-reduction">Parse file list, and apply scale and quality reduction</h3>
+<p>The next bit of code sifts through the filelist, removing anything with a &ldquo;jpg&rdquo; or &ldquo;png&rdquo; extension. I added the &ldquo;item.lower()&rdquo; to account for inconsistent case with extensions (&ldquo;jpg&rdquo; vs &ldquo;JPG&rdquo; are treated equally).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">filelist <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>listdir(cwd)
+<span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> filelist[:]:
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span>(item<span style="color:#f92672">.</span>lower()<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#34;.png&#34;</span>) <span style="color:#f92672">or</span> item<span style="color:#f92672">.</span>lower()<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#34;.jpg&#34;</span>)):
+            filelist<span style="color:#f92672">.</span>remove(item)</code></pre></div>
+<p>The script then iterates though the list of images, scaling them down. The if/else statement swaps the resize(x, y) arguments to account for portrait or landscape pictures. Lastly, tt will rename the files to a more manageable convention for hand typing, and saves them all to the specified quality.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> item, name <span style="color:#f92672">in</span> zip(filelist, suffix):
+    img <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(cwd<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">+</span>item)
+    <span style="color:#75715e"># Get image size to determine scaling</span>
+    size <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>size
+    dim <span style="color:#f92672">=</span> (min(size) <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>) <span style="color:#f92672">/</span> max(size)
+    <span style="color:#66d9ef">if</span> max(size) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1000</span>:
+        <span style="color:#66d9ef">if</span> size[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> max(size):
+            img <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>resize((<span style="color:#ae81ff">1000</span>,int(dim)), Image<span style="color:#f92672">.</span>ANTIALIAS)
+        <span style="color:#66d9ef">else</span>:
+            img <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>resize((int(dim), <span style="color:#ae81ff">1000</span>), Image<span style="color:#f92672">.</span>ANTIALIAS)
+    img<span style="color:#f92672">.</span>save(cwd<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">+</span>prefix<span style="color:#f92672">+</span>name<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;.jpg&#34;</span>, <span style="color:#e6db74">&#39;jpeg&#39;</span>, quality<span style="color:#f92672">=</span><span style="color:#ae81ff">75</span>)</code></pre></div>
+<h2 id="end-result">End Result</h2>
+<p>Putting it all together, the complete script is below. It runs on every jpg and png in the working directory in which it is called.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
+<span style="color:#f92672">import</span> os
+
+<span style="color:#75715e"># Get current folder name and generate file prefix</span>
+cwd <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getcwd()
+folder <span style="color:#f92672">=</span> cwd<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span>)[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+folder <span style="color:#f92672">=</span> folder<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34; &#34;</span>)
+prefix <span style="color:#f92672">=</span> folder[<span style="color:#ae81ff">0</span>]
+<span style="color:#66d9ef">for</span> each <span style="color:#f92672">in</span> folder:
+    <span style="color:#66d9ef">if</span> each <span style="color:#f92672">!=</span> prefix:
+        prefix <span style="color:#f92672">+=</span> each[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>lower()
+
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Image prefix is: &#34;</span> <span style="color:#f92672">+</span> prefix)
+
+<span style="color:#75715e"># Generate suffix 01, 02, 03...</span>
+suffix <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;01&#34;</span>, <span style="color:#e6db74">&#34;02&#34;</span>, <span style="color:#e6db74">&#34;03&#34;</span>, <span style="color:#e6db74">&#34;04&#34;</span>, <span style="color:#e6db74">&#34;05&#34;</span>, <span style="color:#e6db74">&#34;06&#34;</span>, <span style="color:#e6db74">&#34;07&#34;</span>, <span style="color:#e6db74">&#34;08&#34;</span>, <span style="color:#e6db74">&#34;09&#34;</span>]
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">100</span>):
+    suffix<span style="color:#f92672">.</span>append(str(i))
+
+<span style="color:#75715e"># List of included image files</span>
+filelist <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>listdir(cwd)
+<span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> filelist[:]:
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span>(item<span style="color:#f92672">.</span>lower()<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#34;.png&#34;</span>) <span style="color:#f92672">or</span> item<span style="color:#f92672">.</span>lower()<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#34;.jpg&#34;</span>)):
+            filelist<span style="color:#f92672">.</span>remove(item)
+
+<span style="color:#66d9ef">for</span> item, name <span style="color:#f92672">in</span> zip(filelist, suffix):
+    img <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(cwd<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">+</span>item)
+    <span style="color:#75715e"># Get image size to determine scaling</span>
+    size <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>size
+    dim <span style="color:#f92672">=</span> (min(size) <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>) <span style="color:#f92672">/</span> max(size)
+    <span style="color:#66d9ef">if</span> max(size) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1000</span>:
+        <span style="color:#66d9ef">if</span> size[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> max(size):
+            img <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>resize((<span style="color:#ae81ff">1000</span>,int(dim)), Image<span style="color:#f92672">.</span>ANTIALIAS)
+        <span style="color:#66d9ef">else</span>:
+            img <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>resize((int(dim), <span style="color:#ae81ff">1000</span>), Image<span style="color:#f92672">.</span>ANTIALIAS)
+    img<span style="color:#f92672">.</span>save(cwd<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">+</span>prefix<span style="color:#f92672">+</span>name<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;.jpg&#34;</span>, <span style="color:#e6db74">&#39;jpeg&#39;</span>, quality<span style="color:#f92672">=</span><span style="color:#ae81ff">75</span>)</code></pre></div>
+<p>It might not be that pretty, but it gets the job done and gets me back to making and writing.</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/programming/" rel="tag">Programming</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/hugo/" rel="tag">Hugo</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/blog/sate-display-piece/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Sate Display Piece</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/blog/">Blog</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/action-figures/" title="Action Figures">Action Figures</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cameras/" title="Cameras">Cameras</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/casting/" title="Casting">Casting</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/painting/" title="painting">painting</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/programming/" title="Programming">Programming</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/resin/" title="Resin">Resin</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/tabletop/" title="tabletop">tabletop</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/walking/" title="Walking">Walking</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 SwampWire Creations.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

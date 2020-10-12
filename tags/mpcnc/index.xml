@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MPCNC on SwampWire Creations</title>
+    <link>https://www.swampwirecreations.com/tags/mpcnc/</link>
+    <description>Recent content in MPCNC on SwampWire Creations</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Feb 2018 23:18:16 -0400</lastBuildDate><atom:link href="https://www.swampwirecreations.com/tags/mpcnc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MPCNC Initial Build</title>
+      <link>https://www.swampwirecreations.com/projects/mpcnc/initial-build/</link>
+      <pubDate>Wed, 21 Feb 2018 23:18:16 -0400</pubDate>
+      
+      <guid>https://www.swampwirecreations.com/projects/mpcnc/initial-build/</guid>
+      <description>After a few months of going back and forth on this idea, I decided to pull the trigger and build the Mostly Printed CNC (MPCNC). It is a CNC platform that can be assembled out of inexpensive electronics and hardware, EMT conduit, and 3d printed components.
+Ryan at V1 Engineering sells a kit with all the electronics and hardware, leaving me to source a table, conduit, and print the parts. While waiting for the kit to arrive, I started the long process of printing.</description>
+    </item>
+    
+  </channel>
+</rss>

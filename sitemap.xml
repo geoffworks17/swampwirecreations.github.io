@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.swampwirecreations.com/tags/3d-printing/</loc>
+    <lastmod>2020-10-14T06:45:01-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.swampwirecreations.com/tags/mpcnc/</loc>
+    <lastmod>2020-10-14T06:45:01-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.swampwirecreations.com/projects/</loc>
+    <lastmod>2020-10-14T06:45:01-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.swampwirecreations.com/projects/mpcnc/router-upgrade/</loc>
+    <lastmod>2020-10-14T06:45:01-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.swampwirecreations.com/</loc>
+    <lastmod>2020-10-14T06:45:01-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.swampwirecreations.com/tags/</loc>
+    <lastmod>2020-10-14T06:45:01-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.swampwirecreations.com/blog/antares-launch/</loc>
     <lastmod>2020-10-03T13:33:30-04:00</lastmod>
   </url>
@@ -33,16 +63,6 @@
   </url>
   
   <url>
-    <loc>https://www.swampwirecreations.com/</loc>
-    <lastmod>2020-10-03T13:33:30-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.swampwirecreations.com/tags/</loc>
-    <lastmod>2020-10-03T13:33:30-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.swampwirecreations.com/tags/hugo/</loc>
     <lastmod>2020-09-29T00:55:33-04:00</lastmod>
   </url>
@@ -55,21 +75,6 @@
   <url>
     <loc>https://www.swampwirecreations.com/tags/programming/</loc>
     <lastmod>2020-09-29T00:55:33-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.swampwirecreations.com/projects/mpcnc/</loc>
-    <lastmod>2020-09-27T23:17:25-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.swampwirecreations.com/categories/projects/</loc>
-    <lastmod>2020-09-27T23:17:25-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.swampwirecreations.com/projects/</loc>
-    <lastmod>2020-09-27T23:17:25-04:00</lastmod>
   </url>
   
   <url>
@@ -133,18 +138,18 @@
   </url>
   
   <url>
-    <loc>https://www.swampwirecreations.com/tags/3d-printing/</loc>
-    <lastmod>2018-02-21T23:18:16-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.swampwirecreations.com/tags/mpcnc/</loc>
-    <lastmod>2018-02-21T23:18:16-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.swampwirecreations.com/projects/mpcnc/initial-build/</loc>
     <lastmod>2018-02-21T23:18:16-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.swampwirecreations.com/projects/mpcnc/</loc>
+    <lastmod>2018-02-18T23:17:25-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.swampwirecreations.com/categories/projects/</loc>
+    <lastmod>2018-02-18T23:17:25-04:00</lastmod>
   </url>
   
 </urlset>

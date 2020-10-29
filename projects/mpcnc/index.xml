@@ -8,6 +8,16 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 18 Feb 2018 23:17:25 -0400</lastBuildDate><atom:link href="https://www.swampwirecreations.com/projects/mpcnc/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Making a Spoilboard and Breaking Things</title>
+      <link>https://www.swampwirecreations.com/projects/mpcnc/spoilboard/</link>
+      <pubDate>Sun, 25 Oct 2020 08:17:37 -0400</pubDate>
+      
+      <guid>https://www.swampwirecreations.com/projects/mpcnc/spoilboard/</guid>
+      <description>In the process of creating a spoilboard for the MPCNC, I came across several lingering issues with the machine that needed to be resolved. It ended up being an opportunity to correct a bunch of broken bits, tighten up nuts and bolts that had loosened, and come to terms with an accuracy problem I had been ignoring.
+This project also gave me a chance to try a new method of documentation, and learn a lot about what works and doesn&amp;rsquo;t work for my creative workflow.</description>
+    </item>
+    
+    <item>
       <title>Router Upgrade</title>
       <link>https://www.swampwirecreations.com/projects/mpcnc/router-upgrade/</link>
       <pubDate>Wed, 14 Oct 2020 06:45:01 -0400</pubDate>

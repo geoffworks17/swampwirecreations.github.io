@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>MPCNC Initial Build - SwampWire Creations</title>
+	<title>Garage Resize - SwampWire Creations</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,32 +55,34 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">MPCNC Initial Build</h1>
+			<h1 class="post__title">Garage Resize</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-02-21T23:18:16-04:00">Wednesday, Feb 21, 2018</time></div></div>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-05-06T16:28:33-05:00">Sunday, May 6, 2018</time></div></div>
 		</header><div class="content post__content clearfix">
-			<p>After a few months of going back and forth on this idea, I decided to pull the trigger and build the Mostly Printed CNC (MPCNC). It is a CNC platform that can be assembled out of inexpensive electronics and hardware, EMT conduit, and 3d printed components.</p>
-<p>Ryan at V1 Engineering sells a kit with all the electronics and hardware, leaving me to source a table, conduit, and print the parts. While waiting for the kit to arrive, I started the long process of printing.</p>
-<h2 id="printing-components">Printing Components</h2>
-<p>Each part was printed at 55% infill, with 3 perimeters, and at 55mm/s. That was a little fast, and resulted in some ringing in the print features, but the parts didn’t need to be pretty, just accurate and functional.</p>
-<p><img src="/img/18/02-MPCNC-Initial-Build/02mib01.jpg" alt="Printed Parts"></p>
-<p>Early on in the prints, I ran out of white PLA, and swapped to a roll of black PLA. An attempt at hot-swapping to the new roll during a print resulted in a weak part, which easily snapped at the filament change layer. I recommend pausing, moving the tool to a good location, then purging the hot end until the new material is flowing smoothly.</p>
-<p><img src="/img/18/02-MPCNC-Initial-Build/02mib02.jpg" alt="Printed Parts"></p>
-<p>All this printing also taught me how inaccurate the print time estimates are. On average, each set of prints took about 20% longer than expected. This wasn’t too much of a problem, since most prints were taking place at night.</p>
-<p>All in all, printing took nearly two rolls of filament and 120 hours of print time. Here is the final set of parts:</p>
-<p><img src="/img/18/02-MPCNC-Initial-Build/02mib03.jpg" alt="Printed Parts"></p>
-<h2 id="assembly">Assembly</h2>
-<p>With all the parts printed, it was time to install all the bolts and bearings. Assembly was a painless process, and I was soon ready to install the conduit.</p>
-<p><img src="/img/18/02-MPCNC-Initial-Build/02mib04.jpg" alt="Printed Parts"></p>
-<p>The original plan was to to have a 24 by 24 inch build area. This would have required a table measuring almost 3 by 3 feet. At the moment, I don’t have that kind of space to dedicate to this machine. I opted to scale down to 11 by 11 inches, which fits on top of an Ikea Lack side table. With 20 feet of conduit costing well under $20, I can easily rebuild the table at a larger scale when I have the space.</p>
-<h2 id="x-y-gantry">X-Y Gantry</h2>
-<p>I was surprised at how much the center portion weighed and the amount of space it takes up, but it still moves smoothly with the plethora of bearings on the conduit rails.</p>
-<p><img src="/img/18/02-MPCNC-Initial-Build/02mib05.jpg" alt="Printed Parts"></p>
-<h2 id="all-wired-up">All Wired Up</h2>
-<p>Finally, I installed the z axis and wired up the control board. Most of the cables were wrapped in braided cable sleeve. Excess wire was coiled up and zip-tied out of the way. This excess will come in handy when I scale up the machine to a larger working area.
-<img src="/img/18/02-MPCNC-Initial-Build/02mib06.jpg" alt="Printed Parts"></p>
-
+			<p>Soon after finishing the initial build, which was significantly scaled down from my original plans, a garage unit opened up in my apartment. I had been keeping an eye out for this, so I leased one, and moved some things down to set up a small shop.</p>
+<p>I used this newly acquired space to scale the MPCNC up to it&rsquo;s intended size; a 2' x 3' working area.</p>
+<p><img src="/img/18/05-MPCNC-Garage-Resize/05mgr01.jpg" alt="Scaling up"></p>
+<p>Fortunately, the most inexpensive parts of the machine are the parts that determine it&rsquo;s size. I picked up some conduit and plywood from Lowe&rsquo;s, cut them to the proper size, and swapped out the short conduit from the initial build.</p>
+<p>I added a few strips of 1x4 on either side to support the machine, and create a space for a swap-able spoilboard.</p>
+<p><img src="/img/18/05-MPCNC-Garage-Resize/05mgr02.jpg" alt="Rewiring"></p>
+<p>After getting all the hardware in place, I started the rewiring process. For the front and left, the stepper wiring is immediately run through the conduit toward the back and right of the machine.</p>
+<p>I picked up some green plastic cable wrap to replace the braided cable sleeve from before. This stuff was easy to coil around a bundle of wires, but was a bit unwieldy and caught on edges as the axes moved.</p>
+<p><img src="/img/18/05-MPCNC-Garage-Resize/05mgr03.jpg" alt="Garage Network"></p>
+<p>To make both the MPCNC and 3d printer easier to manage and control, I set up a local network using a spare router and an old touchscreen laptop. Both the machines have their own dedicated Raspberry Pi running an Octoprint server. These are connected by Ethernet to the router, which connects by wifi to to the laptop.</p>
+<p>To set up a print, I use my desk-side machine in the apartment to generate the gcode. This is moved to a flashdrive and carried by sneakernet down to the garage network.</p>
+<p><img src="/img/18/05-MPCNC-Garage-Resize/05mgr04.jpg" alt="Printing Cable Chains"></p>
+<p>After too many cable snags, I sought out another solution for the green cable wrap. There are several printable cable chains on thingiverse, so I picked the one with the best user reviews and printed up a few sets.</p>
+<p><img src="/img/18/05-MPCNC-Garage-Resize/05mgr05.jpg" alt="Boxing up the Base"></p>
+<p>To house the control board and add some underlying strength to the plywood base, I built a box underneath the MPCNC using 2x4 lumber and an additional piece of plywood for the bottom. The entire base is sitting on some steel workbench legs.</p>
+<p><img src="/img/18/05-MPCNC-Garage-Resize/05mgr06.jpg" alt="Cable Chain Wiring"></p>
+<p>Running the wiring though the cable chains turned out to be a lot harder than I thought it would be. Each stepper motor has a y-connector between it and the control board, which is a little square of plastic that caught on every single link in the cable chain.</p>
+<p>I ran cable chains along the back and right side of the machine, bringing them together at the back corner where the control board would sit.</p>
+<p><img src="/img/18/05-MPCNC-Garage-Resize/05mgr07.jpg" alt="Electronics Insert"></p>
+<p>To keep the control board and power safe and compact, I designed and printed a small insert with mounting holes of the MiniRambo board and a gridded surface for attaching the power brick with zip ties. There is also a front panel with holes for the power and usb to pass though.</p>
+<p><img src="/img/18/05-MPCNC-Garage-Resize/05mgr09.jpg" alt="Mis-measured"></p>
+<p>When I built the box, I left a small opening for the electronics insert. The dimensions of this insert were based on the idea of a flatter base, hence the rather large gap in the picture above.</p>
+<p>All in all, I am happy with how the MPCNC is coming together.</p>
 		</div>
 		<footer class="post__footer">
 			
@@ -90,9 +92,6 @@
 		<li class="tags__item">
 			<a class="tags__link btn" href="/tags/mpcnc/" rel="tag">MPCNC</a>
 		</li>
-		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/3d-printing/" rel="tag">3d Printing</a>
-		</li>
 	</ul>
 </div>
 		</footer>
@@ -101,10 +100,16 @@
 
 
 <nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/projects/mpcnc/initial-build/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">MPCNC Initial Build</p>
+		</a>
+	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/projects/mpcnc/garage-resize/" rel="next">
+		<a class="pager__link" href="/projects/mpcnc/router-upgrade/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">Garage Resize</p>
+			<p class="pager__title">Router Upgrade</p>
 		</a>
 	</div>
 </nav>

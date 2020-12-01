@@ -125,6 +125,16 @@ Fortunately, the rise of hobbyist electronics, DIY drones, and cheap components 
     </item>
     
     <item>
+      <title>Laser Engraver Testing</title>
+      <link>https://www.swampwirecreations.com/projects/mpcnc/laser-engraver-testing/</link>
+      <pubDate>Mon, 11 Feb 2019 16:31:59 -0500</pubDate>
+      
+      <guid>https://www.swampwirecreations.com/projects/mpcnc/laser-engraver-testing/</guid>
+      <description>With the laser up and running, I wanted to try and dial in the settings to get good engravings and cut through some material. Most laser cutters are of the CO2 variety, which operate an order of magnitude faster than the MPCNC, and with two orders of magnitude more power.
+There are lots of forum posts about setups similar to mine, but no two machines are alike, so I had to figure out my own parameters.</description>
+    </item>
+    
+    <item>
       <title>Pen Plotting and Vinyl Cuts</title>
       <link>https://www.swampwirecreations.com/projects/mpcnc/pen-plotting-and-vinyl-cuts/</link>
       <pubDate>Mon, 04 Jun 2018 16:29:39 -0500</pubDate>

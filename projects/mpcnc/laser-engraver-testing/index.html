@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Router Upgrade - SwampWire Creations</title>
+	<title>Laser Engraver Testing - SwampWire Creations</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,29 +55,26 @@
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Router Upgrade</h1>
+			<h1 class="post__title">Laser Engraver Testing</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-10-14T06:45:01-04:00">Wednesday, Oct 14, 2020</time></div></div>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2019-02-11T16:31:59-05:00">Monday, Feb 11, 2019</time></div></div>
 		</header><div class="content post__content clearfix">
-			<p>After a few years of rebuilds, teardowns, and tool changes, I am finally adding a router to my MPCNC. I have been wanting to work more with sheet material like wood, acrylic, and even aluminum if I can get the hang of using this tool.</p>
-<h2 id="router-choice-and-prints">Router Choice and Prints</h2>
-<p>For a router, V1 Engineering recommend the Dewalt 660, a 5.0 Amp, handheld rotary tool that operates at 30,000 rpm with an included 1/8&quot; collet. This seemed like a solid choice, but I could not find it in my local stores or on Amazon. This led me to get the 7.0 Amp Dewalt 611, which is larger, has a variable speed from 16,000 to 30,000 rpm, and includes a 1/4&quot; collet. Even though I had to purchase a separate 1/8&quot; collet to fit the end mills I would be using, it was a much better choice. The variable speed will allow me to dial in on what is best for the material, and the higher amperage will give it a bit more punch when working with harder materials.</p>
-<p><img src="/img/20/10-MPCNC-router-upgrade/10mr01.jpg" alt="Router"></p>
-<p>A change in router requires hardware that differs from the stock MPCNC build list. Fortunately, someone already designed and shared a compatible <a href="https://www.thingiverse.com/thing:2814921">mount</a> and <a href="https://www.thingiverse.com/thing:3311685">dust shoe</a> on Thingiverse.</p>
-<h2 id="attachment-and-dust-collection">Attachment and Dust Collection</h2>
-<p>Once everything was printed, I attached everything to the Z-axis. I ended up having to modify the mount so the dust shoe would fit. This removed two of the holes for the mounting bolts, but the remaining 6 bolts seems to be enough for securing the router.</p>
-<p><img src="/img/20/10-MPCNC-router-upgrade/10mr02.jpg" alt="Dust Shoe"></p>
-<p>In the picture, there is a black ring that holds the dust shoe. This blocked access to the spindle lock that allows swapping of end mills, and kept the dust shoe a little too close to the work surface. Since the dust shoe was a tight fit and was held in place by friction alone, I ditched the ring. The shoe was further modified by cutting away a bit of the plastic to access the spindle lock.</p>
-<p><img src="/img/20/10-MPCNC-router-upgrade/10mr05.jpg" alt="Skirt"></p>
-<p>Part of the dust shoe is a detachable skirt to help direct airflow across the work surface. This pulls cut material into the vacuum, keeping the environment clean(er) and loose chips from getting re-cut by the end mill. I tried to cut a bristle strip to size and attach it with velcro, but the bristles were too stiff to flex when the z-axis was moved close for low cuts. This will need to be redesigned in the future.</p>
-<p><img src="/img/20/10-MPCNC-router-upgrade/10mr06.jpg" alt="Skirt"></p>
-<h2 id="test-cut">Test Cut</h2>
-<p><img src="/img/20/10-MPCNC-router-upgrade/10mr04.jpg" alt="Assembled"></p>
-<p>With everything assembled and firmly attached, it was time to do a test cut. The standard test for the MPCNC is the &ldquo;Crown Vector&rdquo; seen below. I used a 1/8&quot; single flute endmill, running at about 24k rpm. Feedrate was 15 mm/s, with a 1 mm depth of cut and 3 mm/s plunge rate.</p>
-<p><img src="/img/20/10-MPCNC-router-upgrade/10mr07.jpg" alt="Test Cut"></p>
-<p>I think this rpm was way too fast, and feedrate way too slow to get an efficient cut. Ideally, the spindle is spinning just fast enough to cut chips out of the material, but not too fast to grind material into dust. A fast rpm can be compensated for by moving faster though the material (increased feedrate). Feedrate is limited by the rigidity of the MPCNC and how much the material will yield to being cut.</p>
-<p>The balancing act of rpm, feedrate, and other cutting parameters is different for each material. These numbers can only be determined through research, first-hand experience, and &ldquo;rules of thumb&rdquo; that I have yet to figure out, but that is all part of the fun.</p>
+			<p>With the laser up and running, I wanted to try and dial in the settings to get good engravings and cut through some material. Most laser cutters are of the CO2 variety, which operate an order of magnitude faster than the MPCNC, and with two orders of magnitude more power.</p>
+<p>There are lots of forum posts about setups similar to mine, but no two machines are alike, so I had to figure out my own parameters.</p>
+<h2 id="grayscale-engraving">Grayscale Engraving</h2>
+<p><img src="/img/19/02-MPCNC-Laser-Engraver-Testing/02mlet01.jpg" alt="Leather Testing"></p>
+<p>The above is a sprite from the SNES game Chrono Trigger. If you squint your eyes, you might be able to make out the upraised sword and eyes, but color sprites do not translate well to grayscale laser engravings. Seeking to find a happy medium between charred leather and light marring, I varied the laser intensity a few times before moving on to something else.</p>
+<h2 id="a-more-quantitative-approach">A More Quantitative Approach</h2>
+<p><img src="/img/19/02-MPCNC-Laser-Engraver-Testing/02mlet02.jpg" alt="Burn Baby Burn"></p>
+<p>As I started to lean towards cutting rather than engraving, I set up a systematic experiment to get better results. I generated a test grid of 5mm squares, varying the machine travel speed along the x axis, and laser intensity along the y axis.</p>
+<p><img src="/img/19/02-MPCNC-Laser-Engraver-Testing/02mlet03.jpg" alt="Test Patterns"></p>
+<p>For 3 mm plywood, the happy balance between speed and power was 80% intensity at 10 mm/s. Any faster, and I got wobbles from the toolhead oscillations, and any slower charred the edges too much.</p>
+<p>The relatively low power of the laser requires multiple passes to cut though the plywood. On the right side, there is a separate set of grids where I did a number of passes at various speeds and intensities. The best result was 4 passes at 80% power and 5 mm/s, but I opted for the faster option of 6 passes at 80% power and 10 mm/s. The slight wobble and increased amount of char was worth it.</p>
+<p><img src="/img/19/02-MPCNC-Laser-Engraver-Testing/02mlet04.jpg" alt="Safety"></p>
+<p>Up until now, I had been using a set up goggles that were delivered with the laser. They are designed for the laser wavelength, but they have an optical density (OD) of 2, which is not the best rating for eye safety</p>
+<p>To operate a little safer in the garage, I picked up a sheet of OD 3 safety acrylic, designed a cutout that resembled what I wanted in eye-protection goggles, and set up the laser to run it. There is a strange sense of irony in using the tool to cut the material that is supposed to protect me from the tool itself.</p>
+<p>The cut was 100% power at 5 mm/s, and it took 11 passes. Aside from the acrylic having the proper specs for protection from this wavelength, this material absorbed a ton of direct power before yielding to the laser. I feel comfortable using these as glasses for the occasional viewing of diffused indirect light.</p>
 
 		</div>
 		<footer class="post__footer">
@@ -86,10 +83,13 @@
 	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/mpcnc/" rel="tag">mpcnc</a>
+			<a class="tags__link btn" href="/tags/mpcnc/" rel="tag">MPCNC</a>
 		</li>
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/3d-printing/" rel="tag">3d printing</a>
+			<a class="tags__link btn" href="/tags/laser/" rel="tag">Laser</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/optics/" rel="tag">Optics</a>
 		</li>
 	</ul>
 </div>
@@ -100,15 +100,15 @@
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/projects/mpcnc/laser-engraver-testing/" rel="prev">
+		<a class="pager__link" href="/projects/mpcnc/pen-plotting-and-vinyl-cuts/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">Laser Engraver Testing</p>
+			<p class="pager__title">Pen Plotting and Vinyl Cuts</p>
 		</a>
 	</div>
 	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/projects/mpcnc/spoilboard/" rel="next">
+		<a class="pager__link" href="/projects/mpcnc/router-upgrade/" rel="next">
 			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">Making a Spoilboard and Breaking Things</p>
+			<p class="pager__title">Router Upgrade</p>
 		</a>
 	</div>
 </nav>

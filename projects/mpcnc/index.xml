@@ -37,6 +37,16 @@ Router Choice and Prints For a router, V1 Engineering recommend the Dewalt 660, 
     </item>
     
     <item>
+      <title>Pen Plotting and Vinyl Cuts</title>
+      <link>https://www.swampwirecreations.com/projects/mpcnc/pen-plotting-and-vinyl-cuts/</link>
+      <pubDate>Mon, 04 Jun 2018 16:29:39 -0500</pubDate>
+      
+      <guid>https://www.swampwirecreations.com/projects/mpcnc/pen-plotting-and-vinyl-cuts/</guid>
+      <description>Now that the MPCNC is assembled and wired up, it&amp;rsquo;s time to make something! I decided to start with some simple actions with a pen plotter and vinyl cutter.
+Pen plotting For the first action, I went with a simple vector outline of a Gundam head. I found the above image as a black and grayscale png, and used Inkscape to trace the outline into black and white vector shapes. This was imported in Estlcam, which generated the gcode for this plot.</description>
+    </item>
+    
+    <item>
       <title>Garage Resize</title>
       <link>https://www.swampwirecreations.com/projects/mpcnc/garage-resize/</link>
       <pubDate>Sun, 06 May 2018 16:28:33 -0500</pubDate>

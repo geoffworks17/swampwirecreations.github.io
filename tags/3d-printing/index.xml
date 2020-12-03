@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>3d Printing on SwampWire Creations</title>
+    <title>3d printing on SwampWire Creations</title>
     <link>https://www.swampwirecreations.com/tags/3d-printing/</link>
-    <description>Recent content in 3d Printing on SwampWire Creations</description>
+    <description>Recent content in 3d printing on SwampWire Creations</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 14 Oct 2020 06:45:01 -0400</lastBuildDate><atom:link href="https://www.swampwirecreations.com/tags/3d-printing/index.xml" rel="self" type="application/rss+xml" />
@@ -25,6 +25,16 @@ Router Choice and Prints For a router, V1 Engineering recommend the Dewalt 660, 
       <guid>https://www.swampwirecreations.com/projects/mpcnc/initial-build/</guid>
       <description>After a few months of going back and forth on this idea, I decided to pull the trigger and build the Mostly Printed CNC (MPCNC). It is a CNC platform that can be assembled out of inexpensive electronics and hardware, EMT conduit, and 3d printed components.
 Ryan at V1 Engineering sells a kit with all the electronics and hardware, leaving me to source a table, conduit, and print the parts. While waiting for the kit to arrive, I started the long process of printing.</description>
+    </item>
+    
+    <item>
+      <title>Cosplay Blaster</title>
+      <link>https://www.swampwirecreations.com/blog/cosplay-blaster/</link>
+      <pubDate>Wed, 14 Feb 2018 15:48:33 -0500</pubDate>
+      
+      <guid>https://www.swampwirecreations.com/blog/cosplay-blaster/</guid>
+      <description>&lt;p&gt;A friend of mine recently joined the 501st, a group of Star Wars fans who cosplay in full sets of screen-accurate Stormtrooper armor for charity events. He opted for a biker scout variant, which includes a distinct laser pistol as a sidearm.&lt;/p&gt;
+&lt;p&gt;To help complete his set of armor, I printed a replica of this blaster.&lt;/p&gt;</description>
     </item>
     
   </channel>

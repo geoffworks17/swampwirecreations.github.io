@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title> - SwampWire Creations</title>
+	<title>Laser Attachment - SwampWire Creations</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,6 @@
 
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="alternate" type="application/rss+xml" href="/projects/index.xml" title="SwampWire Creations">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 		
@@ -52,7 +51,7 @@
 				
 			</a>
 		</li>
-		<li class="menu__item menu__item--active">
+		<li class="menu__item">
 			<a class="menu__link" href="/projects/">
 				
 				<span class="menu__text">Projects</span>
@@ -81,52 +80,77 @@
 		<div class="wrapper flex">
 			<div class="primary">
 			
-<main class="main list" role="main">
-	<div class="content main__content clearfix">
-		<h5 id="a-collection-of-larger-projects-that-span-multiple-posts">A collection of larger projects that span multiple posts.</h5>
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Laser Attachment</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2018-08-18T16:31:03-05:00">Saturday, Aug 18, 2018</time></div></div>
+		</header><div class="content post__content clearfix">
+			<p>There seems to be a proliferation of inexpensive diode lasers available from overseas ranging from 1 to 15 W. It is somewhat concerning that someone can purchase such a high powered blinding device so easily. It is also very tempting&hellip;</p>
+<p>From <a href="https://www.banggood.com">Banggood</a>, I picked up a 5W 405nm laser diode and control circuitry for about $100. Most of my research into these modules were for 1 to 2.5W lasers, which seemed good for engraving, but not suited for cutting. My goal is to cut thin pieces of plywood, and experiment with a few other materials, so I opted for something with little more power without breaking the bank.</p>
+<p><img src="/img/18/08-MPCNC-Laser-Attachment/085l01.jpg" alt="Control Board"></p>
+<p>The driver board did not come with much in the way of documentation, but I was able to figure out there were two methods of control, one being the 12V TTL signal pin attached to the power plug, and the other a two-wire 5V PWM plug.</p>
+<p><img src="/img/18/08-MPCNC-Laser-Attachment/085l03.jpg" alt="Test Circuit"></p>
+<p>To test the laser functionality and figure out its control scheme, I set up a simple Arduino sketch to vary a 5V PWM signal as a potentiometer is turned.</p>
 
-	</div><article class="list__item post">
-        <figure class="list__thumbnail">
-            <a href="https://www.swampwirecreations.com/projects/mpcnc/">
-                <img src="/img/18/02-MPCNC-Initial-Build/thumb.jpg" alt="MPCNC" />
-            </a>
-        </figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/projects/mpcnc/" rel="bookmark">
-			MPCNC
-			</a>
-		</h3>
-		
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		The Mostly Printed CNC (MPCNC) is an entry level DIY kit for a small CNC milling machine developed by Ryan at V1Engineering. This well-documented project is supported by a huge community of tinkerers, hobbyists, and professional machinists who have contributed a multitude of add-ons to the machine.
-This is a record of work performed and milestones reached on building my own MPCNC.
-	</div>
-</article><article class="list__item post">
-        <figure class="list__thumbnail">
-            <a href="https://www.swampwirecreations.com/projects/rc-planes/">
-                <img src="/img/19/02-Foam-Plane/thumb2.jpg" alt="RC Planes" />
-            </a>
-        </figure>
-	<header class="list__header">
-		<h3 class="list__title post__title ">
-			<a href="/projects/rc-planes/" rel="bookmark">
-			RC Planes
-			</a>
-		</h3>
-		
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Foamboard monstrosities that somehow fly.
-	</div>
-</article>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/OuPI0QUAMOw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>The sketch is trivial, but can be found <a href="https://github.com/geoffworks/LaserPWM">here</a>. Use at your own risk.</p>
+<p>In addition to the Arduino test, I wanted to test the 12V pin as well. Using the +12V fan pin on the MPCNC&rsquo;s control board, I as able to change the laser intensity in a similar manner with fan control gcode. since this was direct control from the board, I opted for this method.</p>
+<h2 id="updating-wiring">Updating Wiring</h2>
+<p>The next step was to update the wiring on the MPCNC. I took this opportunity to create a cleaner face plate for the machine, add a power switch for the board, and a second switch for the laser.</p>
+<p><img src="/img/18/08-MPCNC-Laser-Attachment/08mla01.jpg" alt="Marking wires"></p>
+<p>Using zip-ties, I marked which wires went to which axis, and pulled out the old printed faceplate and mount. With Fusion360, I made sure the plate would extend to cover the entire opening, and added two properly-sized rectangles to accommodate the switches.</p>
+<p><img src="/img/18/08-MPCNC-Laser-Attachment/08mla02.jpg" alt="Adding switches"></p>
+<p>I connected the hot line coming from the power brick to the first switch, then split it to the board and second switch. This gave me a master switch that needs to be enabled before the laser will work. Crimp connections were used to hold everything together. I then reattached all the stepper connections and enclosed everything in the MPCNC base.</p>
+<h2 id="burning-stuff">Burning Stuff</h2>
+<p><img src="/img/18/08-MPCNC-Laser-Attachment/08mla03.jpg" alt="Finished piece"></p>
+<p>I set up a Gundam head as my first laser operation, which seems to be the tradition when it comes to first cuts after a large upgrade. With clean lines and smooth operation, I forged ahead to more pieces.</p>
+<h2 id="more-lasing">More lasing!</h2>
+<p><img src="/img/18/08-MPCNC-Laser-Attachment/08mla05.jpg" alt="Test Lasing"></p>
+<p>I engraved a few test circles to get an idea of how dark it will go under various laser intensities and speeds. I then started on my first project, a name tag for work.</p>
+<p>The sheet metal underneath is used to prevent burning through to the MPCNC surface. Until I get more familiar with the operation of this laser, I want to err on the side of caution, and not burn more than is necessary.</p>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/mpcnc/" rel="tag">MPCNC</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/laser/" rel="tag">Laser</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
 </main>
 
 
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/projects/mpcnc/pen-plotting-and-vinyl-cuts/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Pen Plotting and Vinyl Cuts</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/projects/mpcnc/laser-engraver-testing/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Laser Engraver Testing</p>
+		</a>
+	</div>
+</nav>
+
+
 			</div>
-			
-<aside class="sidebar">
+			<aside class="sidebar">
 <div class="widget-recent widget">
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">

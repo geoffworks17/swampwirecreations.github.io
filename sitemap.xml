@@ -160,17 +160,27 @@
   
   <url>
     <loc>https://www.swampwirecreations.com/projects/rc-planes/</loc>
-    <lastmod>2019-02-22T16:38:07-05:00</lastmod>
+    <lastmod>2020-03-08T16:41:51-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.swampwirecreations.com/projects/rc-planes/foam-plane/</loc>
-    <lastmod>2019-02-22T16:38:07-05:00</lastmod>
+    <loc>https://www.swampwirecreations.com/projects/rc-planes/rc-plane-with-needle-cutter/</loc>
+    <lastmod>2020-03-08T16:41:51-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.swampwirecreations.com/tags/rc-planes/</loc>
+    <lastmod>2020-03-08T16:41:51-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.swampwirecreations.com/projects/rc-planes/rc-plane-from-pen-plotter/</loc>
+    <lastmod>2019-06-30T16:38:56-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.swampwirecreations.com/projects/rc-planes/foam-plane/</loc>
     <lastmod>2019-02-22T16:38:07-05:00</lastmod>
   </url>
   
@@ -187,6 +197,11 @@
   <url>
     <loc>https://www.swampwirecreations.com/tags/optics/</loc>
     <lastmod>2019-02-11T16:31:59-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.swampwirecreations.com/projects/mpcnc/laser-attachment/</loc>
+    <lastmod>2018-08-18T16:31:03-05:00</lastmod>
   </url>
   
   <url>
